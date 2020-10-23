@@ -4,7 +4,7 @@ services:
   # NodeJS web server
   nodejs-server:
     build: ./
-    image: gary-lgy/cs3219-otot-task-a-nodejs-server:latest
+    image: garylgy/cs3219-otot-task-a-nodejs-server:latest
     container_name: nodejs-server
     restart: unless-stopped
     networks:
