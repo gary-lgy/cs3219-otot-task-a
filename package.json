@@ -1,0 +1,18 @@
+{
+  "name": "cs3219-otot-task-a",
+  "version": "1.0.0",
+  "description": "CS3219 OTOT Task A",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
