@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  # NodeJS web server
+  nodejs-server:
+    build: ./
+    image: gary-lgy/cs3219-otot-task-a-nodejs-server:latest
+    container_name: nodejs-server
+    restart: unless-stopped
+    tty: true
+    networks:
+      - default-network
+
+  # Nginx reverse proxy
+  nginx-reverse-proxy:
+    image: nginx:1-alpine
+    container_name: nginx-reverse-proxy
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    networks:
+      - default-network
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+
+# Let docker-compose manage this network
+networks:
+  default-network:
+    driver: bridge
